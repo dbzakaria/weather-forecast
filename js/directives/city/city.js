@@ -1,5 +1,6 @@
 app.directive('city', function(){
     this.forecastVisible = false;
+    this.showError = false;
     return {
         restrict: 'E',
         scope: {
@@ -10,16 +11,18 @@ app.directive('city', function(){
             $scope.getWeatherIcon = function (iconName) {
                 return "http://openweathermap.org/img/w/" + iconName + ".png";
             };
+
             $scope.getTimeInMilliSeconds = function(dt) {
                 return dt*1000;
-            }
+            };
+
             $scope.showForecast = function (cityName, countryName) {
-                this.forecastVisible = !this.forecastVisible;
                 forecast.get({ city: cityName, country: countryName }).$promise.then(function(response){
-                    console.log(response.list);
+                    $scope.forecastVisible = !$scope.forecastVisible;
                     $scope.forecast = response.list;
                 }).catch(function(error){
-
+                    $scope.showError = true;
+                    $scope.errorMessage = "Oops! Something went wrong. Try again later.";
                 });
             };
         }

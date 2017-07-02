@@ -1,20 +1,32 @@
-<div class="city bg-primary" ng-click="showForecast(city.name, city.sys.country)">
-    <h3><img ng-src="{{ getWeatherIcon(city.weather[0].icon) }}"/> {{city.name}}</h3>
-    <h4 class="text-capitalize">{{city.weather[0].description}}</h4>
-    <p>{{ getTimeInMilliSeconds(city.dt)  | date: 'fullDate'}}</p>
-    <p>{{ getTimeInMilliSeconds(city.dt)  | date: 'shortTime'}}</p>
-    <h2>{{city.main.temp}} &#8451;</h2>
-    <p>Wind: {{city.wind.speed}}  meter/sec</p>
-</div>
-<div ng-if="forecastVisible">
-    <h3>24-hour forecast</h3>
-    <div class="row bg-primary city-forecast" ng-repeat="hour in forecast" ng-class="{' even':($index % 2)}">
-        <div class="col-md-12">
-
-            <h4>{{ getTimeInMilliSeconds(hour.dt)  | date: 'shortTime'}}</h4>
-            <h5 class="text-capitalize" ><img ng-src="{{ getWeatherIcon(hour.weather[0].icon) }}"/>{{hour.weather[0].description}}</h5>
-            <h3>{{hour.main.temp}} &#8451;</h3>
-            <p>Wind: {{hour.wind.speed}}  meter/sec</p>
+<div class="city row " ng-click="showForecast(city.name, city.sys.country)">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="row {{city.weather[0].main | lowercase}}">
+            <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                <h2><img ng-src="{{ getWeatherIcon(city.weather[0].icon) }}"/><strong>{{city.name}}</strong></h2>
+                <h4 class="text-capitalize">{{city.weather[0].description}}</h4>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                <h3>{{ getTimeInMilliSeconds(city.dt)  | date: 'fullDate'}}</h3>
+                <h3>{{ getTimeInMilliSeconds(city.dt)  | date: 'shortTime'}}</h3>
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4 text-center">
+                <h2><strong>{{city.main.temp}} &#8451;</strong></h2>
+                <h4><strong>Wind: {{city.wind.speed}}  meter/sec</strong></h4>
+            </div>
+        </div>
+        <div ng-if="showError" class="alert alert-danger text-center" role="alert">
+            <h2>{{errorMessage}}</h2>
+        </div>
+        <div ng-if="forecastVisible" class="row forecast text-center">
+            <h4>36-hours forecast</h4>
+            <div class="col-xs-4 col-sm-4 col-md-2 col-lg-1"  ng-repeat="hourForecast in forecast">
+                <h4><strong>{{ getTimeInMilliSeconds(hourForecast.dt)  | date: 'shortTime'}}</strong></h4>
+                <img ng-src="{{ getWeatherIcon(hourForecast.weather[0].icon) }}"/>
+                <h5 class="text-capitalize text-no-wrap" >{{hourForecast.weather[0].description}}</h5>
+                <h4><strong>{{hourForecast.main.temp}} &#8451;</strong></h4>
+                <p>Wind: {{hourForecast.wind.speed}}  meter/sec</p>
+            </div>
         </div>
     </div>
 </div>
+

@@ -2,9 +2,9 @@ app.controller('MainController', ['$scope', 'forecast', 'weather', function($sco
 
     $scope.init = function() {
         $scope.citiesNames =[
-            'London,uk',
+            'Amsterdam,nl',
             'Berlin,de',
-            'Moscow,ru',
+            'Remarkables,nz',
             'Cairo,eg',
             'Seattle,us'
         ];
@@ -16,7 +16,6 @@ app.controller('MainController', ['$scope', 'forecast', 'weather', function($sco
     $scope.loadCities = function() {
         angular.forEach($scope.citiesNames, function (value, key) {
             weather.get({city: value}).$promise.then(function (response) {
-                console.log(response);
                 $scope.cities.push(response);
             }).catch(function(error){
                 $scope.showError = true;
@@ -24,8 +23,6 @@ app.controller('MainController', ['$scope', 'forecast', 'weather', function($sco
             });
         });
     };
-
-
 
     $scope.init();
     $scope.loadCities();

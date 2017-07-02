@@ -1,44 +1,48 @@
-
-.hasError {
-    color: red;
-    background-color: yellow;
-    display: block!important;
+* {
+    color: #777;
 }
 
-.hide {
-    display: none;
+.body {
+    margin: 0px;
 }
 
-.row {
-    background-color:#fafafa;
+h3 {
+    margin-bottom: 0px;
 }
 
 .city {
-    /*min-height: 415px!important;*/
+    border-bottom: 10px solid #fff;
+    cursor: pointer;
+}
+
+.text-no-wrap {
+    white-space: nowrap;
+}
+
+.forecast {
+    background-color: #fcf8e3;
+    border-bottom: 50px solid #fff;
+}
+
+.clouds,
+.mist{
+    background-image: url("../images/cloud.jpg");
+}
+
+.snow {
+    background-image: url("../images/snow.jpg");
+}
+
+.rain,
+.drizzle {
+    background-image: url("../images/rain.jpg");
+}
+
+.clear {
+    background: url("../images/clear.jpg");
+    background-size: contain;
 }
 
 .city-forecast {
     border-bottom: 1px solid #fff;
-}
-
-.city-forecast.even {
-    background-color: #ffffff;
-    color: #000;
-}
-
-.cities {
-    color: white;
-    /*background-color: #1B3778;*/
-}
-
-.superpowers {
-    color: green;
-}
-
-.weakness {
-    color: #f15f43;
-}
-
-.textBlack {
-    color: black;
 }

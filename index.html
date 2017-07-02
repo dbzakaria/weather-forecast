@@ -27,8 +27,9 @@
         <div ng-if="showError" class="alert alert-danger text-center" role="alert">
             <h2>{{errorMessage}}</h2>
         </div>
-        <div class="row cities bg-primary">
-            <div  ng-repeat="city in cities" class="bg-primary text-center col-xs-12 col-sm-4 col-md-2 col-lg-2" ng-class="{'col-md-offset-1': $first, 'col-lg-offset-1': $first}">
+
+        <div class="row" ng-repeat="city in cities">
+            <div class="col-lg-12">
                 <city city="city"></city>
             </div>
         </div>
