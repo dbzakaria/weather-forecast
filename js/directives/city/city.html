@@ -1,0 +1,20 @@
+<div class="city bg-primary" ng-click="showForecast(city.name, city.sys.country)">
+    <h3><img ng-src="{{ getWeatherIcon(city.weather[0].icon) }}"/> {{city.name}}</h3>
+    <h4 class="text-capitalize">{{city.weather[0].description}}</h4>
+    <p>{{ getTimeInMilliSeconds(city.dt)  | date: 'fullDate'}}</p>
+    <p>{{ getTimeInMilliSeconds(city.dt)  | date: 'shortTime'}}</p>
+    <h2>{{city.main.temp}} &#8451;</h2>
+    <p>Wind: {{city.wind.speed}}  meter/sec</p>
+</div>
+<div ng-if="forecastVisible">
+    <h3>24-hour forecast</h3>
+    <div class="row bg-primary city-forecast" ng-repeat="hour in forecast" ng-class="{' even':($index % 2)}">
+        <div class="col-md-12">
+
+            <h4>{{ getTimeInMilliSeconds(hour.dt)  | date: 'shortTime'}}</h4>
+            <h5 class="text-capitalize" ><img ng-src="{{ getWeatherIcon(hour.weather[0].icon) }}"/>{{hour.weather[0].description}}</h5>
+            <h3>{{hour.main.temp}} &#8451;</h3>
+            <p>Wind: {{hour.wind.speed}}  meter/sec</p>
+        </div>
+    </div>
+</div>

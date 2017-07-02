@@ -1,0 +1,44 @@
+
+.hasError {
+    color: red;
+    background-color: yellow;
+    display: block!important;
+}
+
+.hide {
+    display: none;
+}
+
+.row {
+    background-color:#fafafa;
+}
+
+.city {
+    /*min-height: 415px!important;*/
+}
+
+.city-forecast {
+    border-bottom: 1px solid #fff;
+}
+
+.city-forecast.even {
+    background-color: #ffffff;
+    color: #000;
+}
+
+.cities {
+    color: white;
+    /*background-color: #1B3778;*/
+}
+
+.superpowers {
+    color: green;
+}
+
+.weakness {
+    color: #f15f43;
+}
+
+.textBlack {
+    color: black;
+}
