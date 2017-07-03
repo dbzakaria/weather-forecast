@@ -20,9 +20,9 @@
         <div ng-if="forecastVisible" class="row forecast text-center">
             <h4>36-hours forecast</h4>
             <div class="col-xs-4 col-sm-4 col-md-2 col-lg-1"  ng-repeat="hourForecast in forecast">
-                <h4><strong>{{ getTimeInMilliSeconds(hourForecast.dt)  | date: 'shortTime'}}</strong></h4>
+                <h5><strong>{{ getTimeInMilliSeconds(hourForecast.dt)  | date: 'shortTime'}}</strong></h5>
                 <img ng-src="{{ getWeatherIcon(hourForecast.weather[0].icon) }}"/>
-                <h5 class="text-capitalize text-no-wrap" >{{hourForecast.weather[0].description}}</h5>
+                <h6 class="text-capitalize text-no-wrap" >{{hourForecast.weather[0].description}}</h6>
                 <h4><strong>{{hourForecast.main.temp}} &#8451;</strong></h4>
                 <p>Wind: {{hourForecast.wind.speed}}  meter/sec</p>
             </div>

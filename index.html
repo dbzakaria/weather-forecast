@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 </head>
 <body ng-app="ForecastApp" ng-cloak>
 <div class="main" ng-controller="MainController">
@@ -34,9 +36,12 @@
             </div>
         </div>
 
-
+       <!-- <baselinechart title="City Weather Forecast Comparison" cities-forecast="citiesNames"></baselinechart>-->
     </div>
 </div>
+
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
 <!-- Modules -->
 <script src="js/app.js"></script>
 
@@ -49,5 +54,6 @@
 
 <!-- Directives -->
 <script src="js/directives/city/city.js"></script>
+<script src="js/directives/highchart/baselinechart.js"></script>
 
 </body>

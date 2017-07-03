@@ -17,7 +17,7 @@ app.directive('city', function(){
             };
 
             $scope.showForecast = function (cityName, countryName) {
-                forecast.get({ city: cityName, country: countryName }).$promise.then(function(response){
+                forecast.get({ query: cityName + ',' + countryName }).$promise.then(function(response){
                     $scope.forecastVisible = !$scope.forecastVisible;
                     $scope.forecast = response.list;
                 }).catch(function(error){
