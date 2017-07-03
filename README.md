@@ -29,8 +29,8 @@ by supplying the units system preferred `app.constant('UNITS_SYSTEM', 'metric');
 - Chose UI framework Bootstrap to help in responsivness.
 - Used Angular `$resource` over `$http`, for handling different resources endpoints.
 - Created 2 directives for usability:
--- `city`: To render current weather and forecast information for a city.
--- `highchart`: To encapsulate different highcharts types, currently only there is a trial to include the  `baseline` chart.
+  - `city`: To render current weather and forecast information for a city.
+  - `highchart`: To encapsulate different highcharts types, currently only there is a trial to include the  `baseline` chart.
 
 ### Requirements
 
