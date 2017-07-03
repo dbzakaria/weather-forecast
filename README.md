@@ -5,10 +5,10 @@
 
 This tool is built to showcase my knowledge in frontend technologies. The tool is built to:
 
-1. Show the current weather of 5 differennt cities (day, time, tempreture, weather description and wind strength for each city).
-![Image of homepage](./screenshots/homepage.png)
-2. The next 36-hour forecast for each city.
-![Image of city forcast](./screenshots/city_forecast.png)
+1. Show the current weather of 5 differennt cities (day, time, tempreture, weather description and wind strength for each city).  
+![Image of homepage](./screenshots/homepage.jpg)
+2. The next 36-hour forecast for each city.  
+![Image of city forcast](./screenshots/city_forecast.jpg)
 
 ### Installations
 
